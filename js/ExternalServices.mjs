@@ -1,3 +1,5 @@
+import { buildURL } from "./utils.mjs";
+
 const baseURL = "https://api.api-ninjas.com/v1/dogs?";
 
 async function convertToJson(res) {
@@ -10,23 +12,29 @@ async function convertToJson(res) {
 }
 
 export default class ExternalServices {
-    async getData(filter) { //filter is a value
-        const newURL = baseURL + `${filter[0][0]}=${filter[0][1]}`;
-        // const newURL = baseURL + `name=a`
+    constructor() {
+        this.data;
+    }
+
+    async getData(filter) {
+        this.data = [];
+        const newURL = buildURL(baseURL, filter);
+
+        // const newURL = baseURL + `${filter[0][0]}=${filter[0][1]}`;
         const response = await fetch(newURL, {
             method: 'GET',
             headers: { 'X-Api-Key': 'q8Y7sxRHFhePtiyCUwTvBQ==g4yy9poZ6qrYNrsV' },
             contentType: 'application/json'
         });
         console.log(response);
-        const data = await convertToJson(response);
-        console.log(data)
-        return data;
+        this.data = await convertToJson(response);
+        console.log(this.data)
+        return this.data;
     }
 
     async finDogByCompleteName(completeName) {
         const response = await fetch(baseURL + `name=${completeName}`)
         const data = await convertToJson(response);
-        return data.Result
+        return data;
     }
 }
