@@ -1,12 +1,12 @@
 import ExternalServices from "./ExternalServices.mjs";
-import { renderListWithTemplate } from "./utils.mjs";
+import { renderListWithTemplate, loadHeaderFooter } from "./utils.mjs";
 import FilterFormController from "./FilterFormController.mjs";
 
-// let alphabet = 'abcdefghijklmnopqrstuvwxyz';]
+loadHeaderFooter();
 
 function dogCardTemplate(dog) {
     return `<li class="dog-card">
-                <a href="#">
+                <a href="/dog-page/index.html?name=${dog.name}">
                     <img src="${dog.image_link}" alt="${dog.name}"/>
                     <h3>${dog.name}</h3>
                 </a>
@@ -15,12 +15,6 @@ function dogCardTemplate(dog) {
 
 
 const dataSource = new ExternalServices();
-const filter = [
-    ["name", "a"],
-    ["barking", "2"],
-    ["barking", "3"]
-];
-
 const filterController = new FilterFormController();
 
 // document.querySelector("#search").addEventListener("click", (e) => {
@@ -46,9 +40,8 @@ async function renderDogs(dataSource, filter) {
     const doglist = await dataSource.getData(filter);
 
     renderListWithTemplate(dogCardTemplate, section, doglist)
-
 }
 
 // falta arreglar que no se muestren resultados hasta despues de aplicar
 // el primer filtro
-// VAMOS BIEN!!!!!!!!!!!!
+// VAMOS BIEN!!!!!!!!!!!! 
