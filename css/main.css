@@ -9,7 +9,8 @@ body {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
     margin: 0;
     color: #99621E;
 }
@@ -41,12 +42,12 @@ header {
     color: #99621E;
     font-size: 2em;
     padding: 10px;
+    transition: all 0.3s;
+    transform: scale(0.8);
 }
 
 #fav-logo:hover {
-    transform: scale(0.9);
-    transition-property: all;
-    transition-duration: 0.3s;
+    transform: scale(1);
 }
 
 a {
@@ -129,7 +130,7 @@ input[type=button] {
     padding-top: 10px;
 }
 
-#dogs img {
+img {
     max-width: 100%;
     height: auto;
 }
@@ -143,8 +144,67 @@ input[type=button] {
     font-size: 1.3em;
 }
 
+/* -------------- DOG PAGE -------------- */
+#dog-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#dog-container h2,
+#dog-container h3 {
+    text-align: center;
+}
+
+#dog-container p {
+    display: block;
+    font-size: 1.2em;
+    color: #99621E;
+    font-weight: bold;
+    text-align: center;
+}
+
+#dog-container span {
+    font-weight: lighter;
+    padding-left: 3px;
+    color: black;
+}
+
+#dog-container #fav-button {
+    background-color: transparent;
+    border: none;
+    display: inline;
+    font-size: 1em;
+    padding: 10px;
+    color: #cc1d1d;
+    transform: translateY(2px);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#dog-container #fav-button:hover {
+    transform: scale(1.1);
+}
+
+
+/* ------------- FAV PAGE ------------- */
+
+#fav-dogs-container li {
+    border-bottom: 1px solid #99621E;
+    padding: 30px 0;
+}
+
+
+
+
+
+
 
 @media screen and (min-width: 670px) {
+    body {
+        font-size: 18px;
+    }
+
     #dogs {
         display: flex;
         flex-wrap: wrap;
@@ -188,5 +248,12 @@ input[type=button] {
     #dogs h3,
     #dogs img {
         transition: all 0.5s;
+    }
+
+
+    /* ---- DOG PAGE ---- */
+    #dog-container {
+        flex-direction: row;
+        justify-content: space-around;
     }
 }
