@@ -1,0 +1,192 @@
+body {
+    font-size: 15px;
+    font-family: 'Dosis', sans-serif;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #eae1df;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+    color: #99621E;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #99621e28;
+}
+
+#logo #span1 {
+    display: block;
+    font-size: 0.7em;
+    padding-left: 21px;
+    margin-bottom: -18px;
+}
+
+#logo #span2 {
+    display: block;
+    margin-top: -18px;
+    padding-left: 46px;
+    font-size: 1.2em;
+}
+
+#fav-logo {
+    color: #99621E;
+    font-size: 2em;
+    padding: 10px;
+}
+
+#fav-logo:hover {
+    transform: scale(0.9);
+    transition-property: all;
+    transition-duration: 0.3s;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ------------ FILTERS -------------*/
+
+main {
+    padding-left: 15px;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+#filter-form {
+    display: block;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px 20px;
+    gap: 15px;
+}
+
+label {
+    display: block;
+    padding: 5px 0;
+}
+
+input[type=number],
+input[type=text] {
+    background-color: #eae1df;
+    border: none;
+    border-bottom: 1px solid #99621E;
+    font-size: 1.2em;
+    font-family: 'Dosis', sans-serif;
+}
+
+input[type=number] {
+    width: 25px;
+    margin-left: 5px;
+    padding-left: 5px;
+}
+
+input[type=number]:focus {
+    border-bottom: 1px solid #99621E;
+    outline: 0;
+}
+
+input[type=text] {
+    width: 20px;
+    text-align: center;
+}
+
+input[type=text]:focus {
+    width: 20px;
+    margin: 0 auto;
+    outline: 0;
+}
+
+input[type=button] {
+    margin-top: 20px;
+    padding: 3px 50px;
+    color: #eae1df;
+    background-color: #99621E;
+    border: none;
+    border-radius: 15px;
+    font-size: 1em;
+}
+
+/* ----------- IMAGES LIST -------------- */
+
+#dogs {
+    padding-top: 10px;
+}
+
+#dogs img {
+    max-width: 100%;
+    height: auto;
+}
+
+#dogs li {
+    padding-top: 40px;
+}
+
+#dogs h3 {
+    padding-bottom: 3px;
+    font-size: 1.3em;
+}
+
+
+@media screen and (min-width: 670px) {
+    #dogs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #dogs li {
+        position: relative;
+        overflow: hidden;
+        padding-top: 0;
+        padding: 15px 0;
+    }
+
+    #dogs h3 {
+        display: inline;
+        position: absolute;
+        width: 300px;
+        height: 200px;
+        text-align: center;
+        top: 100px;
+        color: #eae1df;
+        transform: translateY(150px);
+        z-index: -1;
+    }
+
+    #dogs img {
+        width: 300px;
+        height: 200px;
+    }
+
+    #dogs li:hover h3 {
+        transform: translateY(0);
+        z-index: 1;
+    }
+
+    #dogs li:hover img {
+        filter: blur(2px) brightness(50%);
+        transform: scale(1.1);
+    }
+
+    #dogs h3,
+    #dogs img {
+        transition: all 0.5s;
+    }
+}

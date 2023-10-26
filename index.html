@@ -4,35 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Perfect Dog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&family=Montserrat&display=swap" rel="stylesheet">
+    <!-- Link to access icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="js/main.js" type="module"></script>
+    <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
     <header id="main-header"></header>
     <main>
-        <form name="filters">
+        <h2>Choose Your Filters</h2>
+        <p>At least one field is required. The range of the characteristics goes from 1 to 5.</p>
+        <form name="filters" id="filter-form">
             <label for="name">
-                First Letter of the Dog Breed
+                First Letter of the Dog Breed:
                 <input type="text" name="name" id="name" maxlength="1" required>
             </label>
-            <label for="playfulness">
-                Playfulness
-                <input type="range" name="playfulness" id="playfulness" min="1" max="5">
+            <label for="trainability">
+                Trainability:
+                <input type="number" name="trainability" id="trainability" min="1" max="5" maxlength="1">
             </label>
             <label for="energy">
-                Energy
-                <input type="range" name="energy" id="energy" min="1" max="5">
+                Energy:
+                <input type="number" name="energy" id="energy" min="1" max="5" maxlength="1">
             </label>
             <label for="barking">
-                Barking
-                <input type="range" name="barking" id="barking" min="1" max="5">
+                Barking:
+                <input type="number" name="barking" id="barking" min="1" max="5" maxlength="1">
             </label>
             <label for="shedding">
-                Shedding
-                <input type="range" name="shedding" id="shedding" min="1" max="5">
+                Shedding:
+                <input type="number" name="shedding" id="shedding" min="1" max="5" maxlength="1">
             </label>
             <input type="button" value="Search" id="search">
         </form>
-        <section id="dogs"></section>
+        <section>
+            <ul id="dogs"></ul>
+        </section>
     </main>
     <footer id="main-footer"></footer>
 </body>

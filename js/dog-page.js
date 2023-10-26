@@ -6,11 +6,9 @@ loadHeaderFooter();
 const data = new ExternalServices();
 
 function dogTemplate(dog) {
-    return `<li class="dog-card">
-                <img src="${dog.image_link}" alt="${dog.name}"/>
-                <h3>${dog.name}</h3>
-                <button id="fav-button">♡</button>
-            </li>`;
+    return `<h3>${dog.name}</h3>
+            <img src="${dog.image_link}" alt="${dog.name}"/>
+            <button id="fav-button">♡</button>`;
 
 }
 

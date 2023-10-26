@@ -7,8 +7,8 @@ loadHeaderFooter();
 function dogCardTemplate(dog) {
     return `<li class="dog-card">
                 <a href="dog-page/index.html?name=${dog.name}">
-                    <img src="${dog.image_link}" alt="${dog.name}"/>
                     <h3>${dog.name}</h3>
+                    <img src="${dog.image_link}" alt="${dog.name}"/>
                 </a>
             </li>`
 }
