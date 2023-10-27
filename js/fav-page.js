@@ -4,7 +4,7 @@ loadHeaderFooter();
 
 function favDogTemplate(dog) {
   const newDog = `<li>
-    <a href="/dog-page/index.html?name=${dog.name}">
+    <a href="/yourPerfectDog/dog-page/index.html?name=${dog.name}">
       <img src="${dog.image_link}" alt="${dog.name}"/>
       <h3>${dog.name}</h3>
     </a>
