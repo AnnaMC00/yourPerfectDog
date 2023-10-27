@@ -37,8 +37,9 @@ async function renderDog() {
     const title = document.querySelector("title");
     title.textContent = dogData.name + title.textContent;
 
+    document.getElementById("fav-button").addEventListener("click", addToFav.bind(this))
+
     document.getElementById("fav-button").addEventListener("click", () => {
-        addToFav.bind(this)
         document.querySelector(".bx-heart").classList.replace('bx-heart', 'bxs-heart')
     });
 }
